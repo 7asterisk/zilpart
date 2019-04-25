@@ -1,0 +1,10 @@
+//for allowing the material select and other popups to come over bootstrap and other modals
+$root-z-index-of-modal: 1030;
+$cdk-z-index-overlay-container: $root-z-index-of-modal+1;
+$cdk-z-index-overlay: $root-z-index-of-modal+1;
+$cdk-z-index-overlay-backdrop: $root-z-index-of-modal+1;
+
+// color name for brands primary color
+$primary: #404040;
+//font family to be used for your website
+$font-family-sans-serif: 'Montserrat', sans-serif;

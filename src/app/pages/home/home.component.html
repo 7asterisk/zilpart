@@ -1,0 +1,92 @@
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <img [src]="images[0]" style="width:100%" alt="Random first slide">
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[1]" style="width:100%" alt="Random second slide">
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[2]" style="width:100%" alt="Random third slide">
+  </ng-template>
+</ngb-carousel>
+
+
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <h1 class="display-6">Popular on Little Closet</h1>
+    <p class="categories">
+      <a [routerLink]="[ '/path' ]" routerLinkActive="active">Mens</a>
+      <span>/</span>
+      <a [routerLink]="[ '/path' ]" routerLinkActive="active">Mens</a>
+      <span class="display-6">/</span>
+      <a [routerLink]="[ '/path' ]" routerLinkActive="active">Mens</a>
+      <span class="display-6">/</span>
+      <a [routerLink]="[ '/path' ]" routerLinkActive="active">Mens</a>
+    </p>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card">
+        <img src="https://colorlib.com/preview/theme/littlecloset/images/product_2.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+
+          <!-- <div class="product_content"> -->
+          <div class="product_info d-flex flex-row align-items-start justify-content-start">
+            <div>
+              <div>
+                <div class="product_name"><a href="product.html">Hype Grey Shirt</a></div>
+                <div class="product_category">In <a href="category.html">Category</a></div>
+              </div>
+            </div>
+            <div class="ml-auto text-right">
+              <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="product_price text-right">$4<span>.99</span></div>
+            </div>
+          </div>
+          <div class="product_buttons">
+            <div class="text-right d-flex flex-row align-items-start justify-content-start">
+              <div
+                class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
+                <i class="lni-heart size-sm"></i>
+              </div>
+              <div
+                class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+                <i class="lni-cart size-sm"></i>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <img src="https://colorlib.com/preview/theme/littlecloset/images/product_1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <img src="https://colorlib.com/preview/theme/littlecloset/images/product_3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

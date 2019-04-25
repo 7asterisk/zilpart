@@ -1,0 +1,126 @@
+<br>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-6">
+      <mat-card>
+        <!-- <form class="example-form"> -->
+        <!-- <mat-form-field class="example-full-width">
+            <input matInput placeholder="Company (disabled)" disabled value="Google">
+          </mat-form-field> -->
+
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input [(ngModel)]="dataToAdd.sku" matInput placeholder="SKU">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.name" placeholder="Name of item">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field>
+                <input matInput placeholder="Amount" [(ngModel)]="dataToAdd.amount" type="number" class="example-full-width">
+                <span matPrefix>₹&nbsp;</span>
+                <!-- <span matSuffix>.00</span> -->
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.color" placeholder="color">
+                <!-- <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043"> -->
+                <!-- <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint> -->
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.height" placeholder="hight">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.weight" placeholder="weight">
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <p>
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="dataToAdd.imgUrl" placeholder="Img Url">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width">
+            <textarea matInput [(ngModel)]="dataToAdd.aboutItem" placeholder="About item"></textarea>
+          </mat-form-field>
+        </p>
+        <!-- </form> -->
+      </mat-card>
+
+    </div>
+    <div class="col col-lg-6">
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{dataToAdd.name}}</mat-card-title>
+          <mat-card-subtitle>{{dataToAdd.sku}}</mat-card-subtitle>
+        </mat-card-header>
+        <div class="text-center">
+          <img mat-card-image src="{{dataToAdd.imgUrl}}" style="height:300px; width: auto;" alt="">
+        </div>
+        <mat-card-content>
+          <h4>Price: {{dataToAdd.amount}} ₹ </h4>
+          <p>Color: {{dataToAdd.color}}</p>
+          <p>height: {{dataToAdd.height}}</p>
+          <p>weight: {{dataToAdd.weight}}</p>
+          <p>{{dataToAdd.aboutItem}}</p>
+        </mat-card-content>
+        <mat-card-actions class="text-center">
+          <button mat-raised-button color="primary" (click)="addItem()">Add Item</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<br>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-6" *ngFor="let item of data" >
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{item.name}}</mat-card-title>
+          <mat-card-subtitle>{{item.sku}}</mat-card-subtitle>
+        </mat-card-header>
+        <div class="text-center">
+          <img mat-card-image src="{{item.imgUrl}}" style="height:300px; width: auto;" alt="">
+        </div>
+        <mat-card-content>
+          <h4>Price: {{item.amount}} ₹ </h4>
+          <p>Color: {{item.color}}</p>
+          <p>height: {{item.height}}</p>
+          <p>weight: {{item.weight}}</p>
+          <p>{{item.aboutItem}}</p>
+        </mat-card-content>
+        <mat-card-actions class="text-center">
+          <button mat-raised-button color="primary" (click)="editItem(item.sku)">Edit Item</button>
+          <button mat-raised-button color="warn" (click)="deleteItem(item.sku)">Delete Item</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

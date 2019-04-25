@@ -1,0 +1,18 @@
+// File: '/src/themes/custom_material_theme.scss'
+@import '~@angular/material/theming';
+@import './variables.scss';
+@include mat-core();
+$zilpart-primary: mat-palette($mat-grey, 50);
+$zilpart-accent: mat-palette($mat-grey, 800);
+
+// The warn palette is optional (defaults to red).
+$zilpart-warn: mat-palette($mat-pink, A400);
+
+
+// Create the theme object (a Sass map containing all of the palettes).
+$zilpart-theme: mat-light-theme($zilpart-primary, $zilpart-accent, $zilpart-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($zilpart-theme);

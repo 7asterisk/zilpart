@@ -1,0 +1,13 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer style="width:15%" mode="side" opened>
+    <h3> catogries </h3>
+    <p *ngFor="let cat of catList" >
+      <a [routerLink]="[ '/admin/addItems',{cat: cat.name} ]" routerLinkActive="active">{{cat.name}}</a>
+    </p>
+    <input *ngIf="needCatAdd" type="text" #docId style="width:100%"  (keydown)="addDoc($event,docId.value)" >
+    <button *ngIf="!needCatAdd" mat-icon-button (click)="needCatAdd = !needCatAdd" ><mat-icon>add</mat-icon></button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
